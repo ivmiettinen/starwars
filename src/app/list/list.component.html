@@ -1,8 +1,15 @@
 <div class="list-group">
-  <app-item *ngFor="let char of characters" [character]="char">
-
-      {{ char }}
-      <!-- {{ char[i].name }} -->
-
+  <app-item *ngFor="let char of characters" [character]="char"
+  (sideAssigned)="onSideAssigned($event)">
+    {{ char }}
+    <!-- {{ char[i].name }} -->
   </app-item>
 </div>
+
+
+<!-- //$event holds the name and the assigned side of
+"onAssign(side: string) {
+  this.sideAssigned.emit({ name: this.character.name, side: side });
+  // this.character.side = side;
+}
+" -->
