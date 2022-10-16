@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-item',
@@ -6,8 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
-  character: string = '';
-
+  @Input() character: any;
   constructor() {}
 
   ngOnInit(): void {}
