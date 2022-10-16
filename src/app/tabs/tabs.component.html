@@ -1,13 +1,13 @@
 <div>
   <ul class="nav nav-tabs">
-    <li role="nav-item">
-      <a class="nav-link" aria-current="page" href="#" (click)="onChoose('all')" style="cursor: pointer">All</a>
+    <li role="nav-item" [ngClass]="{active: chosenList === 'all'}">
+      <a class="nav-link" (click)="onChoose('all')" style="cursor: pointer">All</a>
     </li>
-    <li role="nav-item">
-      <a class="nav-link" aria-current="page" href="#"  (click)="onChoose('light')" style="cursor: pointer">Light</a>
+    <li role="nav-item" [ngClass]="{active: chosenList === 'light'}">
+      <a class="nav-link" (click)="onChoose('light')" style="cursor: pointer">Light</a>
     </li>
-    <li role="nav-item">
-      <a class="nav-link" aria-current="page" href="#" (click)="onChoose('dark')" style="cursor: pointer">Dark</a>
+    <li role="nav-item" [ngClass]="{active: chosenList === 'dark'}">
+      <a class="nav-link" (click)="onChoose('dark')" style="cursor: pointer">Dark</a>
     </li>
   </ul>
 

@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
   characters = [
-    {name: 'Luke Skywalker', side: ''},
-    {name: 'Darth Vader', side: ''},
+    {name: 'Luke Skywalker', side: 'light'},
+    {name: 'Darth Vader', side: 'dark'},
   ];
 
   chosenList = 'all';
