@@ -2,3 +2,7 @@
   margin: 1rem 0rem 1rem 0rem;
 
 }
+
+input.ng-invalid.ng-touched{
+border: 1px solid red;
+}
