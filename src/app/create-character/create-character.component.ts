@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { StarWarsService } from '../star-wars.service';
 
 interface sidesObj {
   value: string;
   display: string;
+}
+
+interface formTypes {
+  name: string;
+  side: string;
 }
 
 @Component({
@@ -17,7 +23,20 @@ export class CreateCharacterComponent implements OnInit {
     { display: 'Dark', value: 'dark' },
   ];
 
-  constructor() {}
+  swService: StarWarsService;
+
+  constructor(swService: StarWarsService) {
+    this.swService = swService;
+  }
 
   ngOnInit(): void {}
+
+  onSubmit(submittedForm: { value: formTypes }) {
+    // console.log('type of ', typeof submittedForm);
+    console.log('submittedForm!:', submittedForm);
+    this.swService.addCharacter(
+      submittedForm.value.name,
+      submittedForm.value.side
+    );
+  }
 }
