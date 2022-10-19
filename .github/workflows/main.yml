@@ -42,7 +42,7 @@ jobs:
         with:
           target_branch: main
           build_dir: dist/starwars
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
