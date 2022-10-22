@@ -35,12 +35,12 @@ jobs:
       #     SECRET_API_KEY: ${{ secrets.API_KEY}}
 
       - name: Build
-        run: npm run build
+        run: npm run build:prod
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: main
+          target_branch: gh-pages
           build_dir: dist/starwars
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
