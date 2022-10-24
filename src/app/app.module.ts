@@ -18,6 +18,8 @@ const routes: Routes = [
   {path: '**', redirectTo: '/' }
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
