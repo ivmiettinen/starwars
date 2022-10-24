@@ -14,8 +14,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: TabsComponent },
-  {path: 'new-character', component: CreateCharacterComponent}
-]
+  { path: 'new-character', component: CreateCharacterComponent },
+  {path: '**', redirectTo: '/' }
+];
 
 @NgModule({
   declarations: [
@@ -24,14 +25,10 @@ const routes: Routes = [
     ListComponent,
     ItemComponent,
     CreateCharacterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [StarWarsService, LogService ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  providers: [StarWarsService, LogService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
