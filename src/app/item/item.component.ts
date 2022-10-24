@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StarWarsService } from '../star-wars.service';
 
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
