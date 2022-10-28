@@ -36,14 +36,16 @@ export class StarWarsService {
           const data: any = response;
           const extractedChars = data.results;
           const chars = extractedChars.map((char: charObj) => {
-            return { name: char.name, side: '' };
+            return { name: char.name, side: 'ccc' };
           });
+          
           return chars;
         })
       )
       .subscribe((data) => {
-        console.log('response: ', data);
+        // console.log('response: ', data);
         this.characters = data;
+        this.characterChanged.next();
       });
   }
 
