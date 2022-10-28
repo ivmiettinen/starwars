@@ -11,17 +11,20 @@ import { CreateCharacterComponent } from './create-character/create-character.co
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: 'characters', component: TabsComponent, children:[
-    {path: '', redirectTo: 'all', pathMatch: 'full'},
-    {path: ':side', component: ListComponent}
-  ] },
+  {
+    path: 'characters',
+    component: TabsComponent,
+    children: [
+      { path: '', redirectTo: 'all', pathMatch: 'full' },
+      { path: ':side', component: ListComponent },
+    ],
+  },
   { path: 'new-character', component: CreateCharacterComponent },
-  {path: '**', redirectTo: '/characters' }
+  { path: '**', redirectTo: '/characters' },
 ];
-
-
 
 @NgModule({
   declarations: [
@@ -32,7 +35,12 @@ const routes: Routes = [
     CreateCharacterComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+  ],
   providers: [StarWarsService, LogService],
   bootstrap: [AppComponent],
 })
