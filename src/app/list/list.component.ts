@@ -17,8 +17,6 @@ export class ListComponent implements OnInit, OnDestroy {
 
   loadedSide = 'all';
 
-  grauh = 'dsadsa';
-
   subscription: any;
 
   charSubscription: any;

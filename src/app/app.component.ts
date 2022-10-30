@@ -9,8 +9,6 @@ import { StarWarsService } from './star-wars.service';
 export class AppComponent implements OnInit {
   swService: StarWarsService;
 
-  grauh = 'dsadsa';
-
   constructor(swService: StarWarsService) {
     this.swService = swService;
   }

@@ -36,7 +36,7 @@ export class StarWarsService {
           const data: any = response;
           const extractedChars = data.results;
           const chars = extractedChars.map((char: charObj) => {
-            return { name: char.name, side: 'ccc' };
+            return { name: char.name, side: '' };
           });
           
           return chars;
