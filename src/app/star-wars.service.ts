@@ -13,8 +13,8 @@ interface charObj {
 @Injectable()
 export class StarWarsService {
   private characters: charObj[] = [
-    { name: 'Luke Skywalker', side: 'light' },
-    { name: 'Darth Vader', side: 'dark' },
+        { name: 'Luke Skywalker', side: 'light' },
+        { name: 'Darth Vader', side: 'dark' },
   ];
 
   private logService: LogService;
@@ -43,7 +43,6 @@ export class StarWarsService {
         })
       )
       .subscribe((data) => {
-        // console.log('response: ', data);
         this.characters = data;
         this.characterChanged.next();
       });
@@ -51,10 +50,8 @@ export class StarWarsService {
 
   getCharacters(chosenList: string) {
     if (chosenList === 'all') {
-      //copy of original the list
       return this.characters.slice();
     }
-    // this.characters = this.characters.map((p: any) => p.name)
     return this.characters.filter((c) => {
       return c.side === chosenList;
     });

@@ -15,6 +15,8 @@ export class ListComponent implements OnInit, OnDestroy {
 
   swService: StarWarsService;
 
+  loadingChars = true;
+
   loadedSide = 'all';
 
   subscription: any;
@@ -30,6 +32,7 @@ export class ListComponent implements OnInit, OnDestroy {
     this.activatedRoute.params.subscribe((params) => {
       this.characters = this.swService.getCharacters(params['side']);
       this.loadedSide = params['side'];
+      this.loadingChars = false;
     });
     this.subscription = this.swService.characterChanged.subscribe(() => {
       this.characters = this.swService.getCharacters(this.loadedSide);
